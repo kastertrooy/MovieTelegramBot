@@ -221,4 +221,87 @@ public class Buttons {
         inlineKeyboardMarkup.setKeyboard(rowList);
         return inlineKeyboardMarkup;
     }
+
+    public ReplyKeyboard userOrAdmin() {
+        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        replyKeyboardMarkup.setResizeKeyboard(true);
+
+        KeyboardRow keyboardRow = new KeyboardRow();
+
+        KeyboardButton user = new KeyboardButton();
+        user.setText(language.buttonLanguage("user"));
+        keyboardRow.add(user);
+        List<KeyboardRow> rowList = new ArrayList<>();
+        rowList.add(keyboardRow);
+        rowList = new ArrayList<>();
+
+        KeyboardButton admin = new KeyboardButton();
+        admin.setText(language.buttonLanguage("admin"));
+        keyboardRow.add(admin);
+        rowList.add(keyboardRow);
+
+        replyKeyboardMarkup.setKeyboard(rowList);
+        return replyKeyboardMarkup;
+    }
+
+    public ReplyKeyboard regOrLogin() {
+        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        replyKeyboardMarkup.setResizeKeyboard(true);
+
+        KeyboardRow keyboardRow = new KeyboardRow();
+
+        KeyboardButton registration = new KeyboardButton();
+        registration.setText(language.buttonLanguage("registration"));
+        keyboardRow.add(registration);
+        List<KeyboardRow> rowList = new ArrayList<>();
+        rowList.add(keyboardRow);
+        rowList = new ArrayList<>();
+
+        KeyboardButton login = new KeyboardButton();
+        login.setText(language.buttonLanguage("login"));
+        keyboardRow.add(login);
+        rowList.add(keyboardRow);
+
+        replyKeyboardMarkup.setKeyboard(rowList);
+        return replyKeyboardMarkup;
+    }
+
+    public ReplyKeyboard empt() {
+        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        replyKeyboardMarkup.setResizeKeyboard(true);
+
+        KeyboardRow keyboardRow = new KeyboardRow();
+
+        KeyboardButton back = new KeyboardButton();
+        back.setText(" ");
+        keyboardRow.add(back);
+
+        List<KeyboardRow> rowList = new ArrayList<>();
+        rowList.add(keyboardRow);
+
+        replyKeyboardMarkup.setKeyboard(rowList);
+        return replyKeyboardMarkup;
+    }
+
+    public ReplyKeyboard cofirmAndRename() {
+        List<InlineKeyboardButton>keyboardButtons = new ArrayList<>();
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>>rowList = new ArrayList<>();
+
+        InlineKeyboardButton confirm = new InlineKeyboardButton();
+        confirm.setText(language.buttonLanguage("confirm"));
+        confirm.setCallbackData("confirm");
+        keyboardButtons.add(confirm);
+        rowList.add(keyboardButtons);
+        keyboardButtons = new ArrayList<>();
+
+        InlineKeyboardButton rename = new InlineKeyboardButton();
+        rename.setText(language.buttonLanguage("rename"));
+        rename.setCallbackData("rename");
+        keyboardButtons.add(rename);
+        rowList.add(keyboardButtons);
+
+        inlineKeyboardMarkup.setKeyboard(rowList);
+        return inlineKeyboardMarkup;
+    }
 }
